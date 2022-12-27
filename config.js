@@ -1,4 +1,9 @@
+/********************
+ * Config Main File *
+ ********************/
 module.exports = {
     DIR: __dirname,
-    LOGIC: __dirname + "/logic/"
+    CLI: __dirname + "/client",
+    LOGIC: __dirname + "/server/logic",
+    DB: __dirname + "/database"
 };
