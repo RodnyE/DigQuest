@@ -2,7 +2,7 @@
     "name": "digquest",
     "version": "0.0.0",
 
-    "script": {
+    "scripts": {
         "start": "node main.js",
         "test": "node main.js"
     },
