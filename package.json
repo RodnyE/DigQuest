@@ -1,0 +1,9 @@
+{
+  "name": "digquest",
+  "version": "0.0.0",
+  
+  "script": {
+    "start": "node server.js",
+    "test": "node server.js"
+  }
+}
