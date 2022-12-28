@@ -1,12 +1,4 @@
-constequip = {
-    weapon: "na",
-    head: "na",
-    armor: "na",
-    boots: "na",
-    skin: "na"
-};
-
-constUserModel = (DataTypes) => {
+const UserModel = (DataTypes) => {
     return {
         user_id: {
             type: DataTypes.STRING,
@@ -20,74 +12,15 @@ constUserModel = (DataTypes) => {
         },
         nickname: {
             type: DataTypes.STRING,
-            unique: true,
-            allowNull: false
+            allowNull: true
         },
         password: {
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull: false
         },
-        firstEntry: {
-            type: DataTypes.BOOLEAN,
-            defaultValue: true
-        },
-        color: {
+        email: {
             type: DataTypes.STRING,
-        },
-        level: {
-            type: DataTypes.INTEGER,
-            defaultValue: 1
-        },
-        xp: {
-            type: DataTypes.INTEGER,
-            defaultValue: 0
-        },
-        pic: {
-            type: DataTypes.STRING
-        },
-        daily: {
-            type: DataTypes.INTEGER,
-            defaultValue: 1
-        },
-        equipment: {
-            type: DataTypes.STRING,
-            defaultValue: JSON.stringify(equip)
-        },
-        inventory: {
-            type: DataTypes.STRING,
-            defaultValue: "[]"
-        },
-        spins: {
-            type: DataTypes.INTEGER,
-            defaultValue: 3
-        },
-        map: {
-            type: DataTypes.STRING,
-            defaultValue: "coliseum_city"
-        },
-        pos: {
-            type: DataTypes.STRING,
-            defaultValue: "{}"
-        },
-        speed: {
-            type: DataTypes.INTEGER,
-            defaultValue: 3
-        },
-        isOnline: {
-            type: DataTypes.BOOLEAN,
-            defaultStatus: false
-        },
-        lastTimeOnline: {
-            type: DataTypes.INTEGER,
-            defaultValue: newDate().getTime()
-        },
-        verified: {
-            type: DataTypes.BOOLEAN,
-            defaultValue: true
-        },
-        vip: {
-            type: DataTypes.INTEGER,
-            defaultValue: 0
+            allowNull: false
         },
         acclevel: {
             type: DataTypes.INTEGER,
