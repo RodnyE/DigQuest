@@ -7,13 +7,13 @@ const passport = require("./passport.js");
 
 router.post('/login', passport.authenticate('login', {
     successRedirect: '/game',
-    failureRedirect: '/login',
+    failureRedirect: '/auth/login',
     failureFlash: true
 }));
 
 router.post('/signup', passport.authenticate('signup', {
     successRedirect: '/game',
-    failureRedirect: '/signup',
+    failureRedirect: '/auth/signup',
     failureFlash: true
 }));
 
