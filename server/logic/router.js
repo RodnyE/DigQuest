@@ -4,10 +4,12 @@
 
 const config = require("../../config.js");
 const router = require("express").Router();
+const auth = require("./auth/router.js");
 const index = async (req , res) => {
-    res.sendFile(config.CLI + "/index.html");
+    await res.sendFile(config.CLI + "/index.html");
 };
 
-router.use("/", index);
+router.get("/", index);
+router.use("/auth" , auth);
 
 module.exports = router;

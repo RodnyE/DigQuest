@@ -17,8 +17,14 @@ const io = require("socket.io")(server, {
 });
 const router = require(config.LOGIC + "/router.js");
 const cors = require("cors");
+const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
 
 app.use(cors());
+app.use(cookieParser())
+app.use(bodyParser())
+app.use(session({ secret: config.SESSION.secret }))
 app.use(express.static('../client/')); //statics files
 app.use("/", router);
 
@@ -30,7 +36,7 @@ app.use((req , res) => {
 
 server.listen(config.PORT , (log) => console.log("Server running on port:" + config.PORT));
 
-module.exports = io;
+module.exports = {io , app};
 
 // Call to socket module.
 require(config.LOGIC + "/socket.js");
