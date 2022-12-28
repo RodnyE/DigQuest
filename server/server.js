@@ -15,7 +15,7 @@ const io = require("socket.io")(server, {
         method: ["POST", "GET"]
     }
 });
-const router = require(config.LOGIC + "/router.js");
+
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
@@ -26,6 +26,8 @@ app.use(cookieParser())
 app.use(bodyParser())
 app.use(session({ secret: config.SESSION.secret }))
 app.use(express.static('../client/')); //statics files
+module.exports = {io , app};
+const router = require(config.LOGIC + "/router.js");
 app.use("/", router);
 
 //Error route
@@ -36,7 +38,6 @@ app.use((req , res) => {
 
 server.listen(config.PORT , (log) => console.log("Server running on port:" + config.PORT));
 
-module.exports = {io , app};
 
 // Call to socket module.
 require(config.LOGIC + "/socket.js");

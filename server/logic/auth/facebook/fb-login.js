@@ -2,11 +2,11 @@
  *  Facebook Login File  *
  *************************/
 
-const config = require("../../../config.js");
+const config = require("../../../../config.js");
 const passport = require("passport");
 const facebook = require("passport-facebook");
 const facebookStrategy = facebook.Strategy;
-const app = require(config.DIR + "/server.js").app;
+const app = require(config.DIR + "/server/server.js").app;
 
 
 passport.serializeUser((user, done) => {
@@ -19,7 +19,7 @@ passport.deserializeUser((id, done) => {
         done(err, user);
     });*/
     console.log("deserialize");
-    done(null , user);
+    done(null , {});
 });
 
 app.use(passport.initialize());
