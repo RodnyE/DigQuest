@@ -83,7 +83,7 @@ passport.use('signup', new LocalStrategy({
                 newUser.password = password;
                 newUser.email = req.param('email');
                 
-                const reg = User.create(newUser);
+                const reg = await User.create(newUser);
 
                 if (reg) {
 
