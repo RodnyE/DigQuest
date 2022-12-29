@@ -1,12 +1,26 @@
-/* 
- * main styles 
+/*
+ * main styles
  */
- 
-:root {
-  
-}
+
+:root {}
 
 * {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
+    user-select: none;
+    user-zoom: none;
+}
+
+
+/* force landscape modal */
+#landscape-modal > .modal-dialog {
+    min-height: auto;
+    padding: 1rem;
+    border-radius: 200px;
+}
+
+#landscape-modal .modal-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

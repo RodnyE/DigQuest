@@ -7,12 +7,16 @@
     
     <!-- libs -->
     <script src="libs/eruda.js"></script>
+    <script src="libs/animate.js"></script>
     <script src="libs/pixi.js"></script>
     
     
     <!-- components -->
     <link rel="stylesheet" href="comp/view/view.css">
+    <link rel="stylesheet" href="comp/modal/modal.css">
+    
     <script src="comp/view/view.js"></script>
+    <script src="comp/modal/modal.js"></script>
     
     
     <!-- main files -->
@@ -32,6 +36,13 @@
 </head>
 
 <body onload="main()">
+    
+    <!-- Force Landscape -->
+    <div id="landscape-modal" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-body"> Gire la pantalla </div>
+        </div>
+    </div>
     
     <!-- 
       -- Auth
