@@ -6,7 +6,7 @@ let viewVisible = null;
 
 /**
  * Create a new view
- * @param selector String: css selector of element
+ * @param selector String - css selector of element
  */
 class ViewComponent {
     
@@ -24,6 +24,7 @@ class ViewComponent {
      * show view and hide actual visible view
      */
     show () {
+        if (this.visible) return;
         this.visible = true;
         this.classList.add("view-visible");
 
@@ -35,6 +36,7 @@ class ViewComponent {
      * hide view
      */
     hide () {
+        if (!this.visible) return;
         this.visible = false;
         this.classList.remove("view-visible");
     }
