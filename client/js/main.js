@@ -1,11 +1,22 @@
 /**
  * main script
  */
- 
+let USER;
+
 function main () {
     
     // start browser console
-    eruda.init(); 
+    eruda.init();
+    
+    
+    // get user data
+    USER = stg.getData("user", {
+        name: null,
+        pass: null,
+        email: null,
+        token: null
+    });
+    
     
     // start views
     initAuthView();
