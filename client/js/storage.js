@@ -3,13 +3,22 @@
  */
  
 const stg = {
-    db: localStorage.getItem("storage") || {},
+    
+    // database
+    db: (() => {
+        const db = localStorage.getItem("storage");
+        
+        if (db) return JSON.parse(db);
+        return {};
+    })(),
+    
+    
     
     /**
      * Get a stored value
-     * @param id String - name of stored value
-     * @param dfl Any - if not stored value, return this
-     * @return - stored value
+     * @param {String} id - name of stored value
+     * @param {*} dfl - if not stored value, return this
+     * @return {*} stored value or `dfl`
      */
     getData (id, dfl) {
         let db = this.db;
@@ -21,9 +30,9 @@ const stg = {
     
     /**
      * Set a value
-     * @param id String - name of value
-     * @param value Any - a value to store
-     * @return - value
+     * @param {String} id - name of value
+     * @param {*} value - a value to store
+     * @return {*} the `value` param
      */
     setData (id, value) {
         this.db[id] = value;
@@ -35,7 +44,7 @@ const stg = {
     
     /**
      * Remove a specific value
-     * @param id String - name of value
+     * @param {String} id - name of value
      */
     removeData (id) {
         delete this.db[id];
@@ -45,7 +54,6 @@ const stg = {
     
     /**
      * Save data to local storage
-     * @void
      */
     save () {
         localStorage.setItem("storage", JSON.stringify(this.db));
