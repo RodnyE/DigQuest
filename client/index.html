@@ -1,9 +1,55 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-  </head>
-  <body>
     
-  </body>
+    <!-- libs -->
+    <script src="libs/eruda.js"></script>
+    <script src="libs/pixi.js"></script>
+    
+    
+    <!-- components -->
+    <link rel="stylesheet" href="comp/view/view.css">
+    <script src="comp/view/view.js"></script>
+    
+    
+    <!-- main files -->
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+    
+    
+    <!-- views -->
+    <link rel="stylesheet" href="views/auth-view/view.css">
+    <link rel="stylesheet" href="views/menu-view/view.css">
+    <link rel="stylesheet" href="views/game-view/view.css">
+    
+    <script src="views/auth-view/view.js"></script>
+    <script src="views/menu-view/view.js"></script>
+    <script src="views/game-view/view.js"></script>
+    
+</head>
+
+<body onload="main()">
+    
+    <!-- 
+      -- Auth
+      -->
+    <div id="auth-view">
+        
+    </div>
+    
+    
+    <!-- 
+      --  Main Menu
+      -->
+    <div id="menu-view"></div>
+    
+    <!-- 
+      --  Game
+      -->
+    <div id="game-view"></div>
+    
+</body>
 </html>
