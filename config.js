@@ -3,6 +3,8 @@
  ********************/
 module.exports = {
     PORT: process.env.PORT || 3000,
+    TEST_PORT: 8000,
+    
     DIR: __dirname,
     CLI: __dirname + "/client",
     LOGIC: __dirname + "/server/logic",

@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "scripts": {
         "start": "node main.js",
-        "test": "node main.js"
+        "test": "node server/server.test.js"
     },
     "dependencies": {
         "body-parser": "^1.20.1",
@@ -15,7 +15,7 @@
         "passport-local": "^1.0.0",
         "passport-facebook": "^3.0.0",
         "socket.io": "^4.5.4",
-        "sequelize": "^6.19.0",
+        "sequelize": "^6.28.0",
         "sqlite3": "^5.0.6",
         "https": "^1.0.0"
     }
