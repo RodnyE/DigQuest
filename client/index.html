@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="shortcut icon" href="assets/favicon.png">
+    <title> DigQuest </title>
     
     <!-- libs -->
     <script src="libs/eruda.js"></script>
     <script src="libs/animate.js"></script>
-    <script src="libs/pixi.js"></script>
+    <!--script src="libs/pixi.js"></script-->
     
     
     <!-- components -->
@@ -22,6 +23,7 @@
     <!-- main files -->
     <link rel="stylesheet" href="css/main.css">
     <script src="js/main.js"></script>
+    <script src="js/storage.js"></script>
     
     
     <!-- views -->
@@ -37,12 +39,6 @@
 
 <body onload="main()">
     
-    <!-- Force Landscape -->
-    <div id="landscape-modal" class="modal">
-        <div class="modal-dialog">
-            <div class="modal-body"> Gire la pantalla </div>
-        </div>
-    </div>
     
     <!-- 
       -- Auth
@@ -61,6 +57,14 @@
       --  Game
       -->
     <div id="game-view"></div>
+    
+    
+    <!-- force landscape -->
+    <div id="landscape-modal" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-body"> Gire la pantalla </div>
+        </div>
+    </div>
     
 </body>
 </html>

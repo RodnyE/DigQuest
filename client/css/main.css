@@ -12,11 +12,19 @@
 }
 
 
-/* force landscape modal */
+/* 
+ * force landscape modal 
+ */
+#landscape-modal {
+    background: black;
+    color: rgba(255, 255, 255, .5);
+}
+
 #landscape-modal > .modal-dialog {
     min-height: auto;
     padding: 1rem;
     border-radius: 200px;
+    background: none;
 }
 
 #landscape-modal .modal-body {
