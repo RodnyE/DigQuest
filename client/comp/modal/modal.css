@@ -1,0 +1,71 @@
+/*
+ * Modal Component
+ */
+
+.modal {
+    /* hide */
+    display: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+
+    background: rgba(0,0,0,.3);
+    width: 100vw;
+    height: 100vh;
+}
+
+.modal-visible {
+    /* show */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* window of modal */
+.modal-dialog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-width: 200px;
+    min-height: 180px;
+    position: relative;
+
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 3px white;
+}
+
+/* header */
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: .25em 1em;
+    border-bottom: solid var(--divisor);
+}
+
+/* body */
+.modal-body {
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* button container */
+.modal-footer {
+    display: flex;
+    flex-direction: row;
+
+    border-top: solid var(--divisor);
+    padding: .3rem;
+}
+
+.modal-footer > .button {
+    margin-left: .2rem;
+}
