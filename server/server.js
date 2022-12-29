@@ -8,13 +8,9 @@
 const config = require("../config.js");
 const express = require("express");
 const app = express();
-//const server = require("http").Server(app);
+const server = require("http").Server(app);
 const https = require("https");
 const fs = require("fs");
-const server = https.createServer({
-   cert: fs.readFileSync('mi_certificado.crt'),
-   key: fs.readFileSync('mi_certificado.key')
- },app);
 const io = require("socket.io")(server, {
     cors: {
         origin: "*",
@@ -24,13 +20,9 @@ const io = require("socket.io")(server, {
 
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const cookieParser = require("cookie-parser");
-const session = require("express-session");
 
 app.use(cors());
-app.use(cookieParser())
 app.use(bodyParser())
-app.use(session({ secret: config.SESSION.secret }))
 app.use(express.static('../client/')); //statics files
 module.exports = {io , app};
 const router = require(config.LOGIC + "/router.js");
