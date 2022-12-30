@@ -11,7 +11,7 @@
     left: 0;
     z-index: 5;
 
-    background: rgba(0,0,0,.3);
+    background: rgba( 0, 0, 0, .3);
     width: 100vw;
     height: 100vh;
 }
@@ -23,26 +23,30 @@
     align-items: center;
 }
 
-/* window of modal */
+
+/**
+ * window of modal 
+ */
 .modal-dialog {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    min-width: 200px;
-    min-height: 180px;
     position: relative;
 
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 0 3px white;
+    background: var(--body-bg);
+    border: var(--border);
+    border-radius: var(--border-radius);
 }
 
-/* header */
+/**
+ * header 
+ */
 .modal-header {
     display: flex;
-    align-items: center;
+    align-items: flex;
     justify-content: center;
+    align-self: flex-start;
 
     font-size: 1.5rem;
     font-weight: bold;
@@ -50,22 +54,45 @@
     border-bottom: solid var(--divisor);
 }
 
-/* body */
+/**
+ * body 
+ */
 .modal-body {
     flex-grow: 1;
+    
+    display: flex;
     flex-direction: column;
     align-items: center;
+    
+    padding: 1rem;
 }
 
-/* button container */
+/**
+ * button container 
+ */
 .modal-footer {
     display: flex;
     flex-direction: row;
+    align-self: flex-end;
 
     border-top: solid var(--divisor);
     padding: .3rem;
 }
 
-.modal-footer > .button {
+.modal-footer > button {
     margin-left: .2rem;
+}
+
+/**
+ * decoration 
+ */
+.modal-decoration {
+    position: absolute;
+    top: -.5rem;
+    right: -.5rem;
+    
+    width: 2rem;
+    height: 2rem;
+    background: var(--logo-img);
+    background-size: 100% 100%;
 }

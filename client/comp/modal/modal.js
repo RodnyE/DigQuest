@@ -4,14 +4,24 @@
 
 /**
  * Create a new modal
- * @param selector String - css selector of element
+ *
+ * @constructor
+ * @param {String} selector - css selector of element
+ * @param {Object} options
+ *    decoration {Boolean} - create decoration
  */
 class ModalComponent {
     
-    constructor (selector) {
+    constructor (selector, options = {}) {
         const modal = document.querySelector(selector);
         const modalDialog = modal.querySelector(".modal-dialog");
-       
+        
+        // decoration
+        if (options.decoration) {
+            const decoration = document.createElement("div");
+            decoration.classList.add("modal-decoration");
+            modalDialog.appendChild(decoration);
+        }
        
         // show modal animation
         let showAnimation = new Animate({
@@ -40,6 +50,19 @@ class ModalComponent {
         this.hideAnimation = hideAnimation;
         
     }
+    
+    
+    /**
+     * querySelector method
+     * @param {String} css selector of element
+     * @return {HTMLElement} result of search
+     */
+    E (selector) {
+        return this.modal.querySelector(selector);
+    }
+     
+    
+    
     
     /**
      * show modal dialog
