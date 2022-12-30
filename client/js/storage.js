@@ -21,8 +21,7 @@ const stg = {
      * @return {*} stored value or `dfl`
      */
     getData (id, dfl) {
-        let db = this.db;
-        if (db.hasOwnProperty(id)) return db[id];
+        if (this.checkData(id)) return this.db[id];
         return dfl;
     },
     
@@ -49,6 +48,17 @@ const stg = {
     removeData (id) {
         delete this.db[id];
         this.save();
+    },
+    
+    
+    
+    /**
+     * Verify if exist a stored value
+     * @param {String} id - name of value to verify
+     * @return {Boolean} if exist or not
+     */
+    checkData (id) {
+        return this.db.hasOwnProperty(id);
     },
     
     
