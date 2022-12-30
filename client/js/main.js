@@ -1,4 +1,4 @@
-/**
+/*
  * main script
  */
 let USER;
@@ -19,6 +19,7 @@ function main () {
     
     
     // start views
+    initLoadingModal();
     initAuthView();
     initMenuView();
     initGameView();
@@ -31,14 +32,13 @@ function main () {
         else landscapeModal.show();
     }, 200);
     
-    
     console.log("ready!");
 }
 
 
 /**
  * Get screen orientation
- * @return String - "landscape" or "portrait"
+ * @return {String} "landscape" or "portrait"
  */
 function getOrientation () {
     return innerWidth > innerHeight ? "landscape" : "portrait";
