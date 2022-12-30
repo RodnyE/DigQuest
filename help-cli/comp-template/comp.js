@@ -4,7 +4,8 @@
 
 /**
  * Create a new {{NAME}}
- * @param selector String: css selector of element
+ * @constructor 
+ * @param {String} selector - css selector of element
  */
 class {{UPNAME}}Component {
     
@@ -17,7 +18,7 @@ class {{UPNAME}}Component {
 
     /**
      * An awesome method!
-     * @param n Number: an awesome number
+     * @param {Number} n - an awesome number
      * @return the number
      */
     method (n) {
