@@ -1,0 +1,73 @@
+/**
+ * Loading Modal styles
+ */
+
+#loading-modal > .modal-dialog {
+    background: transparent;
+    border: 0;
+}
+
+#loading-modal .modal-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/**
+ * spinner ellipsis 
+ * @author Based in https://github.com/loadingio/css-spinner
+ */
+.lds-ellipsis,
+.lds-ellipsis div {
+    color: var(--primary);
+    box-sizing: border-box;
+}
+.lds-ellipsis {
+    position: relative;
+    width: 5.65rem;
+    height: 1rem;
+}
+.lds-ellipsis div {
+    position: absolute;
+    top: 0;
+    
+    box-shadow: 0 0 2rem .2rem var(--body-bg);
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: currentColor;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+    left: .6rem;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+    left: .6rem;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+    left: 2.4rem;
+    z-index: 1;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+    left: 4.2rem;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+
+/* Animations */
+@keyframes lds-ellipsis1 {
+    0% {transform: scale(0)}
+    100% {transform: scale(1)}
+}
+@keyframes lds-ellipsis3 {
+    0% {transform: scale(1)}
+    100% {transform: scale(0)}
+}
+@keyframes lds-ellipsis2 {
+    0% {transform: translate(0, 0)}
+    100% {transform: translate(1.8rem, 0)}
+}
